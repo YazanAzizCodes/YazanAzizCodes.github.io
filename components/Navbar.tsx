@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const navLinks = [
-  { href: '/#about', label: 'About' },
-  { href: '/#experience', label: 'Experience' },
-  { href: '/#certifications', label: 'Certifications' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/contact', label: 'Contact' },
+  { label: 'About', href: '/#about', sectionId: 'about' },
+  { label: 'Experience', href: '/#experience', sectionId: 'experience' },
+  { label: 'Certifications', href: '/#certifications', sectionId: 'certifications' },
+  { label: 'Blog', href: '/blog', sectionId: null },
+  { label: 'Contact', href: '/contact', sectionId: null },
 ]
 
 export default function Navbar() {
@@ -20,6 +20,16 @@ export default function Navbar() {
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const handleSectionClick = (e: React.MouseEvent, sectionId: string) => {
+    e.preventDefault()
+    setOpen(false)
+    if (window.location.pathname === '/') {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      window.location.href = `/#${sectionId}`
+    }
+  }
 
   return (
     <motion.nav
@@ -40,6 +50,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
+              onClick={link.sectionId ? (e) => handleSectionClick(e, link.sectionId!) : undefined}
               className="text-sm text-slate-400 hover:text-highlight transition-colors tracking-wide"
             >
               {link.label}
@@ -80,7 +91,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              onClick={() => setOpen(false)}
+              onClick={link.sectionId ? (e) => handleSectionClick(e, link.sectionId!) : () => setOpen(false)}
               className="py-3 text-slate-400 hover:text-highlight transition-colors"
             >
               {link.label}
