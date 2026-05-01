@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: rgba(37, 99, 235, 0.25);
+    color: #60A5FA;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #030C1A;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #0E3060;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1A4A8A;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-highlight via-blue-300 to-accent;
+  }
+
+  .section-pad {
+    @apply py-24 md:py-32;
+  }
+
+  .card-glow {
+    box-shadow: 0 0 30px rgba(37, 99, 235, 0.08);
+  }
+}

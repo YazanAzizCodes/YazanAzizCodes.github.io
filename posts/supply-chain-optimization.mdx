@@ -1,0 +1,36 @@
+---
+title: "Rethinking Supply Chain Optimization for Defense Programs"
+date: "2026-04-15"
+excerpt: "Supply chain optimization in defense is uniquely constrained. Here's how I think about the problem and what traditional inventory models miss."
+tags: ["supply-chain", "optimization", "analytics"]
+---
+
+Most inventory optimization frameworks were designed for commercial environments: elastic demand, substitutable parts, and suppliers you can swap in weeks.
+
+Defense programs break every one of those assumptions.
+
+## What Makes It Different
+
+**Demand is operationally driven.** Parts requirements aren't shaped by market signals — they're driven by flight schedules, deployment configurations, and maintenance forecasts derived from sensor telemetry. Miss a forecast by 10%, and aircraft sit on the ground.
+
+**Lead times are measured in years.** For diminished manufacturing sources (DMS) parts, a supply gap might not close for 18–36 months. Algorithms have to plan that far out.
+
+**The cost of a stockout isn't financial — it's readiness.** That asymmetry fundamentally changes the optimization objective.
+
+## A Better Framing
+
+Instead of minimizing holding cost against a stockout probability, we optimize for *readiness coverage* — ensuring projected demand across all participants is met, while surfacing both surplus (waste) and deficit (risk) positions explicitly.
+
+The key inputs:
+- Flight-hour forecasts by participant
+- Historical consumption rates by configuration
+- Current inventory positions and pipeline quantities
+- Supplier lead times and production capacity
+
+The output isn't just a reorder quantity. It's a ranked list of parts to act on, with explicit surplus/deficit classifications that drive procurement decisions and redistribution across the global supply network.
+
+## What I've Learned
+
+The algorithm is rarely the hard part. The hard part is data quality — getting consistent, trustworthy inventory snapshots from systems that weren't designed to talk to each other. Garbage in, garbage out applies twice as hard when the stakes are this high.
+
+Clean data pipelines and disciplined data governance are worth more than any sophisticated model built on top of unreliable inputs.
