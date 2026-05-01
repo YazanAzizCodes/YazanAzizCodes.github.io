@@ -35,6 +35,17 @@ export default function About() {
 
         <div className="grid md:grid-cols-2 gap-16">
           <div className="space-y-5 text-slate-300 leading-relaxed">
+            {/* Photo */}
+            <div className="flex justify-center md:justify-start mb-2">
+              <div className="relative w-48 h-48 rounded-2xl overflow-hidden border-2 border-rim-bright shadow-lg shadow-accent/10">
+                <img
+                  src="/me.png"
+                  alt="Yazan Aziz"
+                  className="w-full h-full object-cover object-top"
+                />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/5 rounded-2xl" />
+              </div>
+            </div>
             <p>
               I&apos;m a Technical Lead and Data Analyst with dual degrees in{' '}
               <span className="text-highlight">Industrial Engineering</span> and{' '}
