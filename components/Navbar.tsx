@@ -9,7 +9,7 @@ const navLinks = [
   { href: '#experience', label: 'Experience', anchor: true },
   { href: '#certifications', label: 'Certifications', anchor: true },
   { href: '/blog', label: 'Blog', anchor: false },
-  { href: '#contact', label: 'Contact', anchor: true },
+  { href: '/contact', label: 'Contact', anchor: false },
 ]
 
 export default function Navbar() {

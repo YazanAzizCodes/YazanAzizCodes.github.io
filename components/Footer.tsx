@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+
 const socials = [
   {
     label: 'GitHub',
@@ -40,12 +41,12 @@ export default function Footer() {
             Open to connecting with data professionals, defense industry peers, and
             opportunities in advanced analytics and technical leadership.
           </p>
-          <a
-            href="mailto:YazanForHire@gmail.com"
+          <Link
+            href="/contact"
             className="px-8 py-3 border border-accent text-accent rounded hover:bg-accent hover:text-white transition-all duration-200 text-sm"
           >
             Say Hello
-          </a>
+          </Link>
           <div className="flex gap-6 mt-2">
             {socials.map((s) => (
               <a
