@@ -77,13 +77,6 @@ export default function Hero() {
           >
             View My Work
           </Link>
-          <a
-            href="/Yazan_Aziz_Resume.pdf"
-            download
-            className="px-8 py-3 border border-rim-bright text-slate-300 hover:border-accent hover:text-highlight rounded transition-all duration-200"
-          >
-            Download Resume
-          </a>
         </motion.div>
       </div>
 

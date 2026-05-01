@@ -64,8 +64,6 @@ export default function Footer() {
           <div className="flex items-center gap-6 mt-6 text-slate-800 text-xs font-mono">
             <Link href="/blog" className="hover:text-slate-600 transition-colors">Blog</Link>
             <span>·</span>
-            <a href="/Yazan_Aziz_Resume.pdf" download className="hover:text-slate-600 transition-colors">Resume</a>
-            <span>·</span>
             <span>Built with Next.js · GitHub Pages</span>
           </div>
         </div>

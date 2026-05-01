@@ -56,13 +56,6 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href="/Yazan_Aziz_Resume.pdf"
-            download
-            className="px-4 py-1.5 text-sm border border-accent text-accent rounded hover:bg-accent hover:text-white transition-all duration-200"
-          >
-            Resume
-          </a>
         </div>
 
         <button
@@ -97,14 +90,6 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href="/Yazan_Aziz_Resume.pdf"
-            download
-            onClick={() => setOpen(false)}
-            className="mt-2 text-accent border border-accent px-4 py-3 rounded text-center hover:bg-accent hover:text-white transition-all"
-          >
-            Resume
-          </a>
         </motion.div>
       )}
     </motion.nav>
