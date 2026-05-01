@@ -2,14 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 
 const navLinks = [
-  { href: '#about', label: 'About', anchor: true },
-  { href: '#experience', label: 'Experience', anchor: true },
-  { href: '#certifications', label: 'Certifications', anchor: true },
-  { href: '/blog', label: 'Blog', anchor: false },
-  { href: '/contact', label: 'Contact', anchor: false },
+  { href: '/#about', label: 'About' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/#certifications', label: 'Certifications' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact' },
 ]
 
 export default function Navbar() {
@@ -32,30 +31,20 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="font-mono text-xl font-bold text-highlight tracking-widest">
+        <a href="/" className="font-mono text-xl font-bold text-highlight tracking-widest">
           YA<span className="text-accent">.</span>
-        </Link>
+        </a>
 
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) =>
-            link.anchor ? (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm text-slate-400 hover:text-highlight transition-colors tracking-wide"
-              >
-                {link.label}
-              </a>
-            ) : (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm text-slate-400 hover:text-highlight transition-colors tracking-wide"
-              >
-                {link.label}
-              </Link>
-            )
-          )}
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm text-slate-400 hover:text-highlight transition-colors tracking-wide"
+            >
+              {link.label}
+            </a>
+          ))}
           <a
             href="/Yazan_Aziz_Resume.pdf"
             download
@@ -87,27 +76,16 @@ export default function Navbar() {
           style={{ overflow: 'hidden' }}
           className="md:hidden bg-surface border-b border-rim px-6 py-4 flex flex-col gap-1"
         >
-          {navLinks.map((link) =>
-            link.anchor ? (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="py-3 text-slate-400 hover:text-highlight transition-colors"
-              >
-                {link.label}
-              </a>
-            ) : (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="py-3 text-slate-400 hover:text-highlight transition-colors"
-              >
-                {link.label}
-              </Link>
-            )
-          )}
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="py-3 text-slate-400 hover:text-highlight transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
           <a
             href="/Yazan_Aziz_Resume.pdf"
             download
