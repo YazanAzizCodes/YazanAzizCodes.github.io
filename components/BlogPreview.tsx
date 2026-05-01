@@ -10,7 +10,7 @@ export default function BlogPreview({ posts }: { posts: Post[] }) {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="blog" className="section-pad bg-surface/40">
+    <section id="blog" className="section-pad bg-surface/20">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           ref={ref}

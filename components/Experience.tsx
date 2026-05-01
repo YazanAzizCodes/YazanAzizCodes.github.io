@@ -58,7 +58,7 @@ export default function Experience() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="experience" className="section-pad bg-surface/40">
+    <section id="experience" className="section-pad bg-surface/20">
       <div className="max-w-4xl mx-auto px-6">
         <motion.div
           ref={ref}
