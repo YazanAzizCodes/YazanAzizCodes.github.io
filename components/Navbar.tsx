@@ -41,8 +41,8 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="/" className="font-mono text-xl font-bold text-highlight tracking-widest">
-          YA<span className="text-accent">.</span>
+        <a href="/" className="font-mono text-sm font-bold text-highlight tracking-widest uppercase">
+          Home
         </a>
 
         <div className="hidden md:flex items-center gap-8">
