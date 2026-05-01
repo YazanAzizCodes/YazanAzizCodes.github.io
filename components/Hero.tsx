@@ -42,8 +42,7 @@ export default function Hero() {
               variants={fadeUp}
               className="text-5xl md:text-7xl font-bold tracking-tight mb-5"
             >
-              <span className="text-gradient">Yazan</span>{' '}
-              <span className="text-white">Aziz</span>
+              <span className="text-white">Yazan Aziz</span>
             </motion.h1>
 
             <motion.p
