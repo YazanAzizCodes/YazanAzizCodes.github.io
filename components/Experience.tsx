@@ -2,9 +2,12 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const jobs = [
   {
+    slug: 'data-analyst-iv',
     title: 'Data Analyst IV',
     program: 'F-35 · Supply Optimization & Logistics',
     period: '2026 – Present',
@@ -15,6 +18,7 @@ const jobs = [
     ],
   },
   {
+    slug: 'operations-analyst-iii',
     title: 'Operations Analyst III',
     program: 'F-35 · Supply Optimization & Logistics',
     period: '2024 – 2026',
@@ -25,6 +29,7 @@ const jobs = [
     ],
   },
   {
+    slug: 'systems-engineer-iii',
     title: 'Systems Engineer III',
     program: 'F-16 · Diminished Manufacturing Sources',
     period: '2023 – 2024',
@@ -34,6 +39,7 @@ const jobs = [
     ],
   },
   {
+    slug: 'data-analyst-ii',
     title: 'Data Analyst II',
     program: 'F-35 · Quality & Mission Success',
     period: '2022 – 2023',
@@ -44,6 +50,7 @@ const jobs = [
     ],
   },
   {
+    slug: 'project-management-operations-i',
     title: 'Project Management & Operations I',
     program: 'F-16 · Upgrades & Modifications',
     period: '2021 – 2022',
@@ -93,13 +100,21 @@ export default function Experience() {
                       <div>
                         <h3 className="text-white font-semibold text-lg leading-tight">{job.title}</h3>
                         <p className="font-mono text-accent text-sm mt-0.5">{job.program}</p>
-                        <p className="text-slate-500 text-sm">Lockheed Martin</p>
+                        <div className="flex items-center gap-2 mt-1">
+                          <Image
+                            src="/lockheed-logo.png"
+                            alt="Lockheed Martin"
+                            width={80}
+                            height={16}
+                            className="opacity-60 object-contain"
+                          />
+                        </div>
                       </div>
                       <span className="font-mono text-xs text-slate-500 bg-elevated px-3 py-1 rounded border border-rim whitespace-nowrap">
                         {job.period}
                       </span>
                     </div>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 mb-5">
                       {job.bullets.map((b, j) => (
                         <li key={j} className="flex gap-3 text-slate-400 text-sm leading-relaxed">
                           <span className="text-accent mt-1 flex-shrink-0">▹</span>
@@ -107,6 +122,21 @@ export default function Experience() {
                         </li>
                       ))}
                     </ul>
+
+                    {/* Story button */}
+                    <motion.div
+                      whileHover={{ scale: 1.06 }}
+                      whileTap={{ scale: 0.97 }}
+                      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                      className="inline-block"
+                    >
+                      <Link
+                        href={`/experience/${job.slug}`}
+                        className="inline-flex items-center gap-2 font-mono text-xs text-accent border border-accent/40 hover:border-accent hover:bg-accent/10 px-4 py-2 rounded transition-colors duration-200"
+                      >
+                        Read My Story <span aria-hidden>→</span>
+                      </Link>
+                    </motion.div>
                   </div>
                 </motion.div>
               ))}
