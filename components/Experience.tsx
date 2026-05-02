@@ -91,8 +91,14 @@ export default function Experience() {
                   transition={{ duration: 0.5, delay: i * 0.08 }}
                   className="relative pl-12"
                 >
-                  <div className="absolute left-0 top-2 w-7 h-7 rounded-full bg-elevated border-2 border-accent flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-accent" />
+                  <div className="absolute left-0 top-2 w-8 h-8 rounded-full bg-elevated border border-rim flex items-center justify-center overflow-hidden">
+                    <Image
+                      src="/lockheed-logo.png"
+                      alt="Lockheed Martin"
+                      width={28}
+                      height={28}
+                      className="object-contain p-1"
+                    />
                   </div>
 
                   <div className="bg-surface border border-rim rounded-lg p-6 hover:border-rim-bright transition-colors card-glow">
@@ -100,15 +106,7 @@ export default function Experience() {
                       <div>
                         <h3 className="text-white font-semibold text-lg leading-tight">{job.title}</h3>
                         <p className="font-mono text-accent text-sm mt-0.5">{job.program}</p>
-                        <div className="flex items-center gap-2 mt-1">
-                          <Image
-                            src="/lockheed-logo.png"
-                            alt="Lockheed Martin"
-                            width={80}
-                            height={16}
-                            className="opacity-60 object-contain"
-                          />
-                        </div>
+                        <p className="text-slate-500 text-sm">Lockheed Martin</p>
                       </div>
                       <span className="font-mono text-xs text-slate-500 bg-elevated px-3 py-1 rounded border border-rim whitespace-nowrap">
                         {job.period}
